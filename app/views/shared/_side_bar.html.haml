@@ -1,6 +1,26 @@
-.side-ber
+.side-bar
   .side-bar__user-name
     .top-items
       .top-items__name
+        a
       .top-items__icons
-  .sidebar__group-list
+        = link_to "#", class:"top-items__icons--link" do
+          = icon("far", "edit", class:"top-items__icons--icon")
+          %span<>
+        = link_to "#", class:"top-items__icons--link" do
+          = icon("fas", "cog", class:"top-items__icons--icon")
+          %span<>
+  .side-bar__group-list
+    .groups
+      = link_to "#", class:"groups__link" do
+        .groups__link--group
+          %p.groups__link--group--name
+            b
+          %p.groups__link--group--message
+            こんにちは
+      = link_to "#", class:"groups__link" do
+        .groups__link--group
+          %p.groups__link--group--name
+            c
+          %p.groups__link--group--message
+            あああ

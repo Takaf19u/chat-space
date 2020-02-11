@@ -1,0 +1,24 @@
+@mixin display-flex( $between: 0, $center: 0 ) {
+  display: flex;
+  @if  $between == 1 {
+    justify-content: space-between;
+  }
+  @if $center == 1 {
+    align-items: center;
+  }
+}
+
+@mixin font-contents( $size: 0, $color: 0, $bold: 0, $decoration: 0 ) {
+  @if  $size > 0 {
+    font-size: $size;
+  }
+  @if  $color != 0 {
+    color: $color;
+  }
+  @if  $bold == 1 {
+    font-weight: bold;
+  }
+  @if  $decoration == 1 {
+    text-decoration: none;
+  }
+}

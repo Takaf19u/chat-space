@@ -1,0 +1,50 @@
+//レイアウトの設定
+// 全体に適用
+* {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  @include display-flex();
+}
+
+// サイドバー
+.side-bar {
+  width: 300px;
+  &__user-name {
+    height: 100px;
+    padding: 0 20px;
+    background-color: #253141;
+    @include display-flex(0,1);
+  }
+  &__group-list {
+    height: calc(100vh - 100px);
+    padding: 20px 20px 0;
+    background-color: #2f3e51;
+  }
+}
+
+//チャット画面
+.chat-main {
+  width: calc(100vw - 300px);
+  &__group-info {
+    height: 99px;
+    padding: 0 40px;
+    border-bottom: 1px solid #eeeeee;
+    background-color: $white;
+    @include display-flex(1,0);
+  }
+  &__message-list {
+    height: calc(100vh - 190px);
+    padding: 35px 40px 0;
+    background-color: #fafafa;
+  }
+  &__message-form {
+    height: 90px;
+    width: calc(100vw - 300px);
+    position: fixed;
+    padding: 0 40px;
+    background-color: #d2d2d2;
+    @include display-flex(1,1);
+  }
+}
