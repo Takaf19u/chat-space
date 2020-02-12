@@ -20,20 +20,18 @@
 }
 
 //グループリストの設定
-.groups {
+.group {
   height: 100%;
   width: 100%;
   &__link {
     @include font-contents(0, $white, 0, 1);
-    &--group {
-      margin-bottom: 40px;
-      &--name {
-        @include font-contents(15px);
-        margin-bottom: 5px;
-      }
-      &--message{
-        @include font-contents(11px);
-      }
+    &--name {
+      @include font-contents(15px);
+      margin-bottom: 5px;
+    }
+    &--message{
+       @include font-contents(11px);
+       margin-bottom: 40px;
     }
   }
 }
