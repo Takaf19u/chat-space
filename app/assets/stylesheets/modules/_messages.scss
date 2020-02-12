@@ -13,6 +13,6 @@
 
 // メッセージ部分の設定
 .message__Content {
-  @include font-contents(14px, #434a54);
+  @include font-contents(14px, $black);
   margin-bottom: 46px;
 }

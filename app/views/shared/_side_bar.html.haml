@@ -2,12 +2,12 @@
   .side-bar__user-name
     .top-items
       .top-items__name
-        a
+        = current_user.name
       .top-items__icons
         = link_to "#", class:"top-items__icons--link" do
           = icon("far", "edit", class:"top-items__icons--icon")
           %span<>
-        = link_to "#", class:"top-items__icons--link" do
+        = link_to edit_user_path(current_user), class:"top-items__icons--link" do
           = icon("fas", "cog", class:"top-items__icons--icon")
           %span<>
   .side-bar__group-list
