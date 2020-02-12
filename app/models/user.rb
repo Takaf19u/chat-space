@@ -7,6 +7,7 @@ class User < ApplicationRecord
   validates :name, presence: true
   
   has_many :group_users
+  has_many :massages
   has_many :groups, through: :group_users
   
 end
