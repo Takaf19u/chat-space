@@ -1,0 +1,39 @@
+//サイドバー上部の設定
+.top-items {
+  height: 20px;
+  width: 260px;
+  @include display-flex(1);
+  line-height: 20px;
+  &__name {
+    @include font-contents(16px, $white, 1);
+  }
+  &__icons {
+    width: 60px;
+    text-align: right;
+    &--link {
+      @include font-contents(0, $white, 0, 1);
+    }
+    &--icon {
+      margin-left: 5px;
+    }
+  }
+}
+
+//グループリストの設定
+.groups {
+  height: 100%;
+  width: 100%;
+  &__link {
+    @include font-contents(0, $white, 0, 1);
+    &--group {
+      margin-bottom: 40px;
+      &--name {
+        @include font-contents(15px);
+        margin-bottom: 5px;
+      }
+      &--message{
+        @include font-contents(11px);
+      }
+    }
+  }
+}

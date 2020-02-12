@@ -1,4 +1,10 @@
 @import "reset";
+@import "config/variable";
+@import "mixin/mixin";
+@import "modules/config";
+@import "modules/side-bar";
+@import "modules/header";
 @import "modules/messages";
+@import "modules/form";
 @import "font-awesome-sprockets";
 @import "font-awesome";

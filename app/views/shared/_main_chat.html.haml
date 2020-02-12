@@ -1,4 +1,35 @@
 .chat-main
   .chat-main__group-info
+    .group-box__left
+      .group-box__left--group-name
+        test
+      .group-box__left--member
+        Member：aa@aa
+    .group-box__right
+      = link_to "#", class:"group-box__right--edit--btn" do
+        Edit
+        %span<>
   .chat-main__message-list
+    .message__info
+      .message__info--user
+        takahasi
+      .message__info--date
+        2020/02/10(Mon) 21:01:54
+    .message__Content
+      aaa
+    .message__info
+      .message__info--user
+        takahasi
+      .message__info--date
+        2020/02/10(Mon) 21:01:54
+    .message__Content
+      aaa
   .chat-main__message-form
+    %form.new-message
+      .new-message__input-box
+        %input.new-message__input-box--text{:name => "text_box", :placeholder => "type a message", :type => "text", :value => ""}/
+        %label{class: "new-message__input-box--image"}
+          = icon('fas', 'image')
+          %input.new-message__input-box--image--file{type: "file"}
+      .new-message__send
+        %input.new-message__send--send-btn{:name => "send-btn", :type => "submit", :value => "Send"}/

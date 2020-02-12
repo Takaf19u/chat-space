@@ -1,4 +1,18 @@
-* {
-    box-sizing: border-box;
+// 名前/日付の部分の設定
+.message__info {
+  @include display-flex(0,0);
+  margin-bottom: 12px;
+  &--user {
+    @include font-contents(16px, $dark-gray, 1);
+  }
+  &--date {
+    @include font-contents(12px, $light-gray);
+    margin-left: 10px;
+  }
 }
 
+// メッセージ部分の設定
+.message__Content {
+  @include font-contents(14px, #434a54);
+  margin-bottom: 46px;
+}

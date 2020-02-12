@@ -1,0 +1,23 @@
+//チャット画面_header部分
+.group-box__left {
+  margin-top: 35px;
+  &--group-name {
+    @include font-contents(20px, $dark-gray);
+    margin-bottom: 15px;
+  }
+  &--member {
+    @include font-contents(12px, $light-gray);
+  }
+}
+
+.group-box__right {
+  height: 40px;
+  width: 72px;
+  padding: 0 20px;
+  margin-top: 28px;
+  line-height: 40px;
+  border: 1px solid $light-blue;
+  &--edit--btn {
+    @include font-contents(16px, $light-blue, 0, 1);
+  }
+}
