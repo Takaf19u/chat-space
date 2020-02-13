@@ -10,10 +10,10 @@
   &__icons {
     width: 60px;
     text-align: right;
-    &--link {
+    .top-link {
       @include font-contents(0, $white, 0, 1);
     }
-    &--icon {
+    .top-con {
       margin-left: 5px;
     }
   }
@@ -21,8 +21,8 @@
 
 //グループリストの設定
 .group {
-  height: 100%;
   width: 100%;
+  margin-bottom: 40px;
   &__link {
     @include font-contents(0, $white, 0, 1);
     &--name {
@@ -31,7 +31,6 @@
     }
     &--message{
        @include font-contents(11px);
-       margin-bottom: 40px;
     }
   }
 }

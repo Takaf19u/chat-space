@@ -10,14 +10,21 @@
   }
 }
 
-.group-box__right {
+.edit-btn {
   height: 40px;
   width: 72px;
   padding: 0 20px;
   margin-top: 28px;
   line-height: 40px;
   border: 1px solid $light-blue;
-  &--edit--btn {
-    @include font-contents(16px, $light-blue, 0, 1);
-  }
+  @include font-contents(16px, $light-blue, 0, 1);
+//   &--edit--btn {
+//     height: 40px;
+//     width: 72px;
+//     padding: 0 20px;
+//     margin-top: 28px;
+//     line-height: 40px;
+//     border: 1px solid $light-blue;
+//     @include font-contents(16px, $light-blue, 0, 1);
+//   }
 }
