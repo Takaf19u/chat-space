@@ -1,3 +1,7 @@
+.message {
+  margin-bottom: 46px;
+}
+
 // 名前/日付の部分の設定
 .message__info {
   @include display-flex(0,0);
@@ -13,7 +17,6 @@
 
 // メッセージ部分の設定
 .lower-message {
-  margin-bottom: 46px;
   &__content {
     @include font-contents(14px, $black);
   }
