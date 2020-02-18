@@ -6,32 +6,32 @@ $(function(){
     // 「もしメッセージに画像が含まれていたら」
     if (message.image) {
       addImage = 
-      `<img src="` + message.image + `" class="lower-message__image" >`
+      `<img src= ${message.image} class="lower-message__image" >`
     }
     // 「もしメッセージにコメントが含まれていたら」
     if(message.body) {
       addBody = 
-      `<p class="lower-message__content">` +
-        message.body +
-      `</p>`
+      `<p class="lower-message__content">
+        ${message.body} 
+      </p>`
     }
 
     //data-idが反映されるようにしている
     var html = 
-      `<div class="message" data-message-id=` + message.id + `>` +
-      `<div class="message__info">` +
-        `<div class="message__info--user">` +
-          message.user_name +
-        `</div>` +
-        `<div class="message__info--date">` +
-          message.created_at +
-        `</div>` +
-      `</div>` +
-      `<div class="lower-message">` +
-        addBody +
-        addImage +
-      `</div>` +
-    `</div>`
+     `<div class="message" data-message-id= ${message.id}>
+        <div class="message__info">
+          <div class="message__info--user">
+            ${message.user_name}
+          </div>
+          <div class="message__info--date">
+            ${message.created_at}
+          </div>
+        </div>
+        <div class="lower-message">
+          ${addBody}
+          ${addImage}
+        </div>
+      </div>`
 
     return html
   }
