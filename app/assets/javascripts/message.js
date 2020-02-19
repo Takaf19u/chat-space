@@ -49,6 +49,7 @@ $(function(){
       contentType: false
     })
     .done(function(data) {
+      console.log(data)
       var html = buildHTML(data);
       $('.chat-main__message-list').append(html);
       $(".form__send--btn").prop( 'disabled', false );
