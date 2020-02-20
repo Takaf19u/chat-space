@@ -12,17 +12,34 @@ $(function() {
     search_member.append(html);
   }
 
-  function appendErrMsgToHTML(err) {
+  function membersList(users) {
+    var addMembers = []
+    var i = 0
+    var members = $('input[name="group[user_ids][]"]').map(function() {
+      return $(this).val();
+    })
+
+    users.forEach(function(user) {
+      // 配列内にuserと一致するIDがない場合処理を行う
+      if($.inArray(String(user.id), members) === -1) {
+        addMembers[i] = user
+        i += 1
+      }
+    });
+    return addMembers
+  }
+
+  function appendErrMsgToHTML() {
     var html = `
     <div class="chat-group-user clearfix">
-      <p class="chat-group-user__name">${err}</p>
+      <p class="chat-group-user__name">ユーザーが見つかりません</p>
     </div>
   `;
     search_member.append(html);
   }
 
   function addDeleteUser(name, id) {
-    let html = `
+    var html = `
     <div class="chat-group-user clearfix" id="${id}">
       <p class="chat-group-user__name">${name}</p>
       <div class="user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn" data-user-id="${id}" data-user-name="${name}">削除</div>
@@ -31,7 +48,7 @@ $(function() {
   }
   
   function addMember(userId) {
-    let html = `<input value="${userId}" name="group[user_ids][]" type="hidden" id="group_user_ids_${userId}" />`;
+    var html = `<input value="${userId}" name="group[user_ids][]" type="hidden" id="group_user_ids_${userId}" />`;
     $(`#${userId}`).append(html);
   }
 
@@ -49,13 +66,18 @@ $(function() {
     .done(function(users) {
       search_member.empty();
       if (users.length !== 0) {
-        users.forEach(function(user){
-          appendUser(user);
-        });
+        var addMembers = membersList(users)
+        if ( addMembers.length !== 0) {
+          addMembers.forEach(function(user){
+            appendUser(user);
+          });
+        } else {
+          appendErrMsgToHTML();
+        }
       } else if (input.length == 0) {
         return false;
       } else {
-        appendErrMsgToHTML("ユーザーが見つかりません");
+        appendErrMsgToHTML();
       }
     })
 
@@ -74,6 +96,7 @@ $(function() {
   addDeleteUser(userName, userId);
   addMember(userId);
 });
+
 $(document).on("click", ".chat-group-user__btn--remove", function() {
   $(this)
     .parent()
